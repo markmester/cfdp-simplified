@@ -7,7 +7,7 @@ use std::{
     time::{Duration, Instant},
 };
 
-use cfdp::{
+use cfdp_simplified::{
     daemon::{EntityConfig, NakProcedure, PutRequest},
     filestore::{ChecksumType, FileStore},
     pdu::{CRCFlag, Condition, EntityID, PDUDirective, TransmissionMode},

@@ -1,7 +1,7 @@
 use std::{thread, time::Duration};
 
 use camino::Utf8PathBuf;
-use cfdp::{
+use cfdp_simplified::{
     daemon::PutRequest,
     filestore::FileStore,
     pdu::{Condition, EntityID, PDUDirective, TransmissionMode},

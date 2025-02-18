@@ -5,11 +5,11 @@ use tracing_subscriber::EnvFilter;
 
 use anyhow::Context;
 use camino::Utf8PathBuf;
-use cfdp::{
+use cfdp_simplified::{
     daemon::{
         create_daemon,
         transport::{PDUTransport, UdpTransport},
-        EntityConfig, Indication, IndicationHandler, NakProcedure, PutRequest,
+        EntityConfig, Indication, IndicationHandler, NakProcedure, PutRequest, Report,
     },
     filestore::{ChecksumType, FileStore, NativeFileStore},
     pdu::{CRCFlag, Condition, EntityID, TransmissionMode},
@@ -186,7 +186,7 @@ pub enum SmdpRequest {
 #[derive(Clone, Debug)]
 pub struct SmdpResponse {
     pub status: u16,
-    pub data: Vec<cfdp::daemon::Report>,
+    pub data: Vec<Report>,
 }
 
 #[derive(Parser, Debug)]

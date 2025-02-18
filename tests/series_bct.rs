@@ -1,8 +1,8 @@
 use std::{thread, time::Duration};
 
 use camino::Utf8PathBuf;
-use cfdp::{
-    daemon::PutRequest,
+use cfdp_simplified::{
+    daemon::{PutRequest, Report},
     filestore::FileStore,
     pdu::{Condition, EntityID, PDUDirective, TransactionSeqNum, TransmissionMode},
     transaction::TransactionID,
@@ -171,7 +171,7 @@ fn bcts03(fixture_bcts03: &'static EntityConstructorReturn) {
         thread::sleep(Duration::from_millis(100))
     }
 
-    let remote_history: Vec<cfdp::daemon::Report> = remote_user.history().unwrap();
+    let remote_history: Vec<Report> = remote_user.history().unwrap();
 
     assert_eq!(remote_history.len(), 3);
     assert!(path_to_out.exists())

@@ -15,7 +15,7 @@ use std::{
 use async_trait::async_trait;
 use bit_struct::u11;
 use camino::Utf8PathBuf;
-use cfdp::{
+use cfdp_simplified::{
     ccsds::{encode_space_packet, CCSDS_HEADER_LENGTH, CCSDS_SECONDARY_HEADER_LENGTH},
     daemon::{
         EntityConfig, FinishedIndication, Indication, NakProcedure, PutRequest, Report,
@@ -42,7 +42,7 @@ use tokio::{
     task::JoinHandle,
 };
 
-use cfdp::{
+use cfdp_simplified::{
     daemon::transport::{PDUTransport, UdpTransport},
     daemon::Daemon,
 };
